@@ -2,11 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-primary text-white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0f172a;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-green-500 hover:bg-green-500/10 rounded-lg font-semibold transition;
+  }
+
+  .card-base {
+    @apply bg-slate-800/50 rounded-lg border border-slate-700 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card-base hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/20;
+  }
 }
