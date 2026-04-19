@@ -17,6 +17,8 @@ import {
 export default function Home() {
   const [activeService, setActiveService] = useState(0);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
 
   const metrics = [
     { value: '27%', label: 'Vulnerability Backlog Reduction', description: 'CVSS-based prioritization across enterprise systems' },
@@ -76,15 +78,40 @@ export default function Home() {
     { title: 'Customized Training Modules', type: 'Training' },
   ];
 
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleFormChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for reaching out. We will contact you shortly.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setStatusMessage('Sending...');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      setStatusMessage('Thank you for reaching out. We will contact you shortly.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatusMessage('Unable to send your message right now. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -252,6 +279,7 @@ export default function Home() {
           <p className="text-center text-gray-400 mb-12">
             Ready to strengthen your security posture? Reach out to our team today.
           </p>
+
           <form onSubmit={handleFormSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-semibold mb-2">Name</label>
@@ -265,6 +293,7 @@ export default function Home() {
                 placeholder="Your name"
               />
             </div>
+
             <div>
               <label className="block text-sm font-semibold mb-2">Email</label>
               <input
@@ -277,6 +306,7 @@ export default function Home() {
                 placeholder="your@email.com"
               />
             </div>
+
             <div>
               <label className="block text-sm font-semibold mb-2">Message</label>
               <textarea
@@ -289,12 +319,18 @@ export default function Home() {
                 placeholder="Tell us about your security needs..."
               />
             </div>
+
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition transform hover:scale-105"
+              disabled={isSubmitting}
+              className="w-full px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition transform hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
+
+            {statusMessage ? (
+              <p className="text-sm text-center text-gray-300">{statusMessage}</p>
+            ) : null}
           </form>
         </div>
       </section>
