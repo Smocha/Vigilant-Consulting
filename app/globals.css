@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: theme('colors.brand.DEFAULT');
+  color: #f8fafc;
+}
+
+a {
+  @apply text-blue-400 hover:text-blue-500 underline;
+}
