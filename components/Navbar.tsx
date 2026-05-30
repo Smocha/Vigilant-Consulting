@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 const navLinks = [
@@ -15,12 +16,22 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0d1b2a]/95 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
         <Link href="/" className="flex items-center gap-3 no-underline">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#2d6a4f] bg-gradient-to-br from-[#1a3a2a] to-[#2d6a4f] text-sm font-bold text-[#52d48a]">
-            V
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Vigilant Consulting Logo"
+            width={48}
+            height={48}
+            priority
+            className="h-10 w-auto"
+          />
+
           <div className="leading-tight">
-            <span className="block text-sm font-semibold tracking-wide text-[#e8edf2]">Vigilant</span>
-            <small className="block text-[10px] uppercase tracking-[0.18em] text-[#8a9ba8]">Consulting</small>
+            <span className="block text-sm font-semibold tracking-wide text-[#e8edf2]">
+              Vigilant
+            </span>
+            <small className="block text-[10px] uppercase tracking-[0.18em] text-[#8a9ba8]">
+              Consulting
+            </small>
           </div>
         </Link>
 
