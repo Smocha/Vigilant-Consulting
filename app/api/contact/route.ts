@@ -20,6 +20,7 @@ export async function POST(request: Request) {
     const to = process.env.CONTACT_TO_EMAIL || user;
 
     if (!host || !user || !pass || !to) {
+      console.error('Missing SMTP environment variables');
       return NextResponse.json(
         { error: 'Server configuration error' },
         { status: 500 }
