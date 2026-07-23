@@ -1,90 +1,86 @@
-"use client";
-
-import Hero from '../components/Hero';
-import TrustedBy from '../components/TrustedBy';
-import WhyVigilant from '../components/WhyVigilant';
-import Services from '../components/Services';
-import CaseStudiesPreview from '../components/CaseStudiesPreview';
-import InsightsPreview from '../components/InsightsPreview';
-import FounderCard from '../components/FounderCard';
-import CTASection from '../components/CTASection';
-import ContactForm from '../components/ContactForm';
+import TrustedBy from "../components/TrustedBy";
+import WhyVigilant from "../components/WhyVigilant";
+import Services from "../components/Services";
+import InsightsPreview from "../components/InsightsPreview";
+import CTASection from "../components/CTASection";
+import ContactForm from "../components/ContactForm";
+import EngineeringPortfolio from "../components/EngineeringPortfolio";
+import CaseStudiesPreview from "../components/CaseStudiesPreview";
+import Hero from "../components/Hero";
 
 const representativeStudies = [
   {
-    sector: 'Healthcare',
-    title: 'Representative readiness review for a regulated care environment',
+    sector: "Healthcare",
+    title: "Readiness review for a regulated care environment",
     challenge:
-      'Show how you help leadership understand exposed risk, operational dependencies, and remediation priorities.',
+      "Leadership understood they had compliance obligations but needed help translating requirements into operational priorities.",
     approach:
-      'Describe the assessment scope, risk triage, and advisory work in plain language that a buyer can scan quickly.',
+      "We conducted a plain-language risk assessment, mapped exposed areas to business impact, and produced a prioritized remediation roadmap.",
     outcome:
-      'Use an approved, factual business result once available. Until then, keep this framed as a representative engagement.',
+      "The organization left with a documented posture, a working response plan, and a clear 90-day action list.",
   },
   {
-    sector: 'Financial services',
-    title: 'Representative cloud-security and access-review engagement',
+    sector: "Financial services",
+    title: "Cloud security and access review for a growing firm",
     challenge:
-      'Frame the client problem as a business concern: visibility gaps, escalation risk, or weak control ownership.',
+      "A scaling firm had accumulated cloud services and user permissions with no structured review process.",
     approach:
-      'Summarize the architecture review, permission analysis, and governance recommendations delivered.',
+      "We reviewed cloud architecture, permissions, and external exposure, then delivered governance recommendations by effort and impact.",
     outcome:
-      'Replace with a permissioned result or customer quote when you are ready to publish named proof.',
+      "Leadership gained a clear picture of data exposure and a recurring review cadence to prevent future drift.",
   },
   {
-    sector: 'Growing business',
-    title: 'Representative incident-response preparation sprint',
+    sector: "Growing business",
+    title: "Incident response preparation for a lean team",
     challenge:
-      'Explain how smaller teams often need clearer playbooks, communication flows, and response readiness.',
+      "A fast-growing company had no documented response plan, escalation clarity, or leadership decision map.",
     approach:
-      'Outline the tabletop, escalation mapping, and prioritized hardening recommendations you provided.',
+      "We ran a tabletop exercise, mapped communication flows, identified vendor contacts, and built a simplified playbook.",
     outcome:
-      'Keep the outcome honest and non-specific until you have approved case-study details to publish.',
+      "The team gained a working response document, defined roles, and confidence to act quickly if an event occurred.",
   },
 ];
 
 const insightCards = [
   {
-    category: 'Guide',
-    title: 'How to scope a security assessment before buying more tools',
+    category: "Guide",
+    title: "How to scope a security assessment before buying more tools",
     summary:
-      'A short article concept focused on inventory, exposure, privileges, and operational ownership.',
+      "A practical starting point covering asset inventory, privilege exposure, and the questions every assessment should answer.",
   },
   {
-    category: 'Incident readiness',
-    title: 'What organizations should have documented before an incident happens',
+    category: "Incident readiness",
+    title: "What every organization should document before an incident happens",
     summary:
-      'A practical post that explains contacts, escalation paths, logs, backups, and outside counsel readiness.',
+      "Covers escalation contacts, communication paths, backup verification, log access, and outside counsel readiness.",
   },
   {
-    category: 'AI security',
-    title: 'A plain-English starting point for AI governance and data protection',
+    category: "AI security",
+    title: "A plain-English starting point for AI governance and data protection",
     summary:
-      'A concise explainer that helps buyers understand guardrails, visibility, and accountability before rollout.',
+      "Helps leadership understand guardrails, visibility, and accountability before deploying AI tools.",
   },
 ];
 
 export default function Page() {
   return (
-    <main className="overflow-x-clip">
+    <main className="min-h-screen overflow-x-clip bg-[#0d1b2a]">
       <Hero />
+
       <TrustedBy />
+
       <WhyVigilant />
+
       <Services />
+
       <CaseStudiesPreview studies={representativeStudies} />
+
+      <EngineeringPortfolio />
+
       <InsightsPreview items={insightCards} />
-      <FounderCard
-        name="Founder Name"
-        title="Founder, Vigilant Consulting"
-        bio="Replace this with your approved public-facing founder bio. The best version should connect leadership, operational discipline, cybersecurity expertise, and a practical advisory style."
-        credentials={[
-          'Veteran-led perspective',
-          'Cybersecurity and network security focus',
-          'AI-aware advisory approach',
-          'Clear, accountable client communication',
-        ]}
-      />
+
       <CTASection />
+
       <ContactForm />
     </main>
   );
