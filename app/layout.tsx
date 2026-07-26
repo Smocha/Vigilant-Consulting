@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Footer from "../components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,32 +11,43 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Cybersecurity, AI, Compliance, Risk Management, CMMC, NIST 800-171, Security Assessments, and Government Contracting Support.",
+    "Veteran-led cybersecurity, AI, compliance, risk management, CMMC, NIST 800-171, security assessments, and government contracting support.",
 
   keywords: [
-    "Cybersecurity",
+    "Vigilant Consulting",
+    "Cybersecurity Consulting",
     "CMMC",
     "NIST 800-171",
     "Risk Management",
-    "Compliance",
+    "Cybersecurity Compliance",
     "AI Consulting",
     "Government Contracting",
     "Security Assessments",
-    "Vigilant Consulting",
+    "Cloud Security",
+    "Veteran-Owned Business",
+    "San Diego Cybersecurity",
   ],
 
   authors: [
     {
-      name: "Vigilant Consulting",
+      name: "Vigilant Consulting LLC",
       url: "https://vigilantechusa.com",
     },
   ],
 
-  creator: "Vigilant Consulting",
-  publisher: "Vigilant Consulting",
+  creator: "Vigilant Consulting LLC",
+  publisher: "Vigilant Consulting LLC",
+
+  alternates: {
+    canonical: "/",
+  },
 
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      {
+        url: "/favicon.ico",
+      },
+    ],
     shortcut: "/favicon.ico",
     apple: "/logo.png",
   },
@@ -43,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vigilant Consulting",
     description:
-      "Cybersecurity, AI, Compliance, Risk Management, CMMC, and Government Contracting Support.",
+      "Veteran-led cybersecurity, compliance, engineering, and technology advisory services.",
     url: "https://vigilantechusa.com",
     siteName: "Vigilant Consulting",
     images: [
@@ -51,7 +63,7 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Vigilant Consulting",
+        alt: "Vigilant Consulting LLC",
       },
     ],
     locale: "en_US",
@@ -62,45 +74,46 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vigilant Consulting",
     description:
-      "Cybersecurity, AI, Compliance, Risk Management, and Government Contracting Support.",
+      "Veteran-led cybersecurity, compliance, engineering, and technology advisory services.",
     images: ["/logo.png"],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+
+  category: "technology",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#020617",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Vigilant Consulting",
-    url: "https://vigilantechusa.com",
-    logo: "https://vigilantechusa.com/logo.png",
-    email: "info@vigilantechusa.com",
-    telephone: "+1-619-313-0088",
-    sameAs: [
-      "https://www.linkedin.com/company/vigilant-consulting",
-      "https://github.com/Smocha/Vigilant-Consulting",
-    ],
-  };
-
+}>) {
   return (
-    <html lang="en">
-      <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        {children}
+    <html lang="en" className="scroll-smooth">
+      <body className="min-h-screen bg-slate-950 text-white antialiased">
+        <div className="flex min-h-screen flex-col">
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );
