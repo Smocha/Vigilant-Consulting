@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
         <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#52d48a]">
-            Veteran-led cybersecurity advisory
+            Cybersecurity, AI, and risk advisory
           </p>
           <h1 className="mb-6 max-w-3xl text-5xl font-bold leading-tight text-white md:text-6xl">
             Secure your future with clear, accountable guidance.

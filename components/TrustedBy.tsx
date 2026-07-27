@@ -1,4 +1,4 @@
-const trustItems = ['Veteran-led', 'Cybersecurity assessments', 'Incident readiness', 'Cloud security', 'AI security guidance', 'Security training'];
+const trustItems = ['Risk-focused', 'Cybersecurity assessments', 'Incident readiness', 'Cloud security', 'AI security guidance', 'Security training'];
 
 export default function TrustedBy() {
   return (

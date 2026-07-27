@@ -47,7 +47,7 @@ const resourceLinks = [
 ];
 
 const trustItems = [
-  "Veteran-Owned",
+  "Security Advisory",
   "Cybersecurity Focused",
   "Small Business",
   "Remote Consulting",
@@ -89,9 +89,9 @@ export default function Footer() {
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
-              Veteran-led cybersecurity, compliance, engineering, and
-              technology advisory services designed to help organizations
-              strengthen security and improve operational resilience.
+              Cybersecurity, compliance, engineering, and technology
+              advisory services designed to help organizations strengthen
+              security and improve operational resilience.
             </p>
 
             <div className="mt-6 rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.06] p-5">
@@ -100,9 +100,9 @@ export default function Footer() {
               </p>
 
               <p className="mt-2 text-sm leading-6 text-slate-400">
-                Founded by a U.S. Navy veteran with experience supporting
-                cybersecurity operations and Department of Defense information
-                systems.
+                Cybersecurity, compliance, engineering, and technology
+                advisory services for organizations seeking stronger security
+                and operational resilience.
               </p>
             </div>
           </section>
