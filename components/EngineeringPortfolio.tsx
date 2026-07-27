@@ -279,7 +279,9 @@ export default function EngineeringPortfolio() {
       return;
     }
 
-    if (event.pointerType === "mouse" && event.button !== 0) {
+    // Preserve native momentum scrolling on phones and tablets.
+    // Custom dragging is only enabled for the primary mouse button.
+    if (event.pointerType !== "mouse" || event.button !== 0) {
       return;
     }
 
@@ -296,6 +298,10 @@ export default function EngineeringPortfolio() {
   const handlePointerMove = (
     event: PointerEvent<HTMLDivElement>,
   ) => {
+    if (event.pointerType !== "mouse") {
+      return;
+    }
+
     const track = trackRef.current;
     const state = dragState.current;
 
@@ -658,15 +664,16 @@ export default function EngineeringPortfolio() {
           padding: 1rem var(--engineering-page) 1.35rem;
           cursor: grab;
           outline: none;
-          overscroll-behavior-inline: contain;
+          overscroll-behavior-x: contain;
           scroll-behavior: smooth;
           scroll-padding-inline: var(--engineering-page);
           scroll-snap-type: x proximity;
+          -webkit-overflow-scrolling: touch;
           scrollbar-color:
             var(--engineering-accent)
             rgba(255, 255, 255, 0.05);
           scrollbar-width: thin;
-          touch-action: pan-y;
+          touch-action: pan-x pan-y;
         }
 
         .engineering-track:active {
@@ -926,7 +933,7 @@ export default function EngineeringPortfolio() {
         @media (max-width: 700px) {
           .engineering-portfolio {
             --engineering-page: 1rem;
-            --engineering-card-width: min(84vw, 20rem);
+            --engineering-card-width: min(82vw, 20.325rem);
           }
 
           .engineering-heading-layout h2 {
@@ -935,6 +942,14 @@ export default function EngineeringPortfolio() {
 
           .engineering-track {
             scroll-snap-type: x mandatory;
+            scroll-behavior: auto;
+            scroll-padding-inline: 1rem;
+            padding-inline: 1rem;
+          }
+
+          .engineering-card {
+            scroll-snap-align: start;
+            scroll-snap-stop: normal;
           }
 
           .engineering-card {
