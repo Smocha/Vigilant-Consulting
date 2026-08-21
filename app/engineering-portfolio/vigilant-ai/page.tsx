@@ -2,15 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vigilant AI Knowledge Engine | Vigilant Consulting",
-  description:
-    "A self-hosted AI knowledge platform combining semantic retrieval, AI inference, source validation, APIs, and workflow automation.",
+  title: "Vigilant AI Knowledge Engine",
+  description: "AI knowledge platform for semantic retrieval, structured analysis, APIs, and workflow automation.",
   openGraph: {
     title: "Vigilant AI Knowledge Engine",
-    description:
-      "A self-hosted AI knowledge platform for controlled retrieval, structured analysis, and workflow automation.",
+    description: "AI knowledge platform for controlled retrieval and structured workflow automation.",
     type: "website",
-    url: "https://vigilantechusa.com/engineering-portfolio/vigilant-ai",
+    url: "https://www.vigilantechusa.com/engineering-portfolio/vigilant-ai",
   },
 };
 
@@ -31,7 +29,7 @@ const capabilities = [
   "Natural-language document search",
   "Semantic vector retrieval",
   "Multi-source knowledge retrieval",
-  "Local AI inference",
+  "Custom AI inference",
   "Source-backed analysis",
   "Structured response generation",
   "Retrieval validation",
