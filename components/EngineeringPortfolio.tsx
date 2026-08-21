@@ -99,12 +99,12 @@ const projects: Project[] = [
     href: "/engineering-portfolio/ubuntu-server",
   },
   {
-    title: "AI Business Assistant",
+    title: "Vigilant AI Knowledge Engine",
     category: "AI",
     description:
-      "Developed a prototype assistant for answering questions about services, policies, and business workflows.",
-    tags: ["AI", "RAG", "Automation"],
-    href: "/engineering-portfolio/business-assistant",
+      "Built an AI knowledge platform combining semantic retrieval, local inference, source validation, APIs, and workflow automation.",
+    tags: ["FastAPI", "Qdrant", "Ollama"],
+    href: "/engineering-portfolio/vigilant-ai",
   },
   {
     title: "Azure Landing Zone",
