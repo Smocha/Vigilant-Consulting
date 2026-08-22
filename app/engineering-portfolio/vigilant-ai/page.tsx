@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     description: "AI knowledge platform for controlled retrieval and structured workflow automation.",
     type: "website",
     url: "https://www.vigilantechusa.com/engineering-portfolio/vigilant-ai",
+    images: [
+      {
+        url: "https://www.vigilantechusa.com/vigilant-ai-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Vigilant AI Knowledge Engine",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vigilant AI Knowledge Engine",
+    description: "AI knowledge platform for semantic retrieval, structured analysis, APIs, and workflow automation.",
+    images: ["https://www.vigilantechusa.com/vigilant-ai-preview.png"],
   },
 };
 
