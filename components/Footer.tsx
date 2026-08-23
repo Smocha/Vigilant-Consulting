@@ -29,20 +29,12 @@ const companyLinks = [
 
 const resourceLinks = [
   {
-    label: "Capability Statement",
-    href: "/capability-statement",
-  },
-  {
     label: "Privacy Policy",
     href: "/privacy-policy",
   },
   {
     label: "Terms and Conditions",
     href: "/terms",
-  },
-  {
-    label: "Accessibility Statement",
-    href: "/accessibility",
   },
 ];
 
@@ -90,9 +82,9 @@ border-emerald-400/30 bg-emerald-400/10 text-lg font-bold text-emerald-400"
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
-              Veteran-led cybersecurity, compliance, engineering, and
-              technology advisory services designed to help organizations
-              strengthen security and improve operational resilience.
+              Cybersecurity, compliance, engineering, and technology advisory
+              services designed to help organizations strengthen security,
+              reduce risk, and improve operational resilience.
             </p>
 
             <div className="mt-6 rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.06] p-5">
@@ -101,14 +93,14 @@ border-emerald-400/30 bg-emerald-400/10 text-lg font-bold text-emerald-400"
               </p>
 
               <p className="mt-2 text-sm leading-6 text-slate-400">
-                Founded by a U.S. Navy veteran with experience supporting
-                cybersecurity operations and Department of Defense information
-                systems.
+                Practical cybersecurity guidance backed by hands-on experience
+                supporting secure information systems and modern technology
+                environments.
               </p>
             </div>
           </section>
 
-          {/* Company links */}
+          {/* Company navigation */}
           <nav aria-labelledby="footer-company-links-heading">
             <h2
               id="footer-company-links-heading"
@@ -132,7 +124,7 @@ hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-vis
             </ul>
           </nav>
 
-          {/* Resource links */}
+          {/* Resources */}
           <nav aria-labelledby="footer-resource-links-heading">
             <h2
               id="footer-resource-links-heading"
@@ -157,13 +149,13 @@ hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-vis
 
             <div className="mt-8">
               <a
-                href="https://www.linkedin.com/in/ronnellvalentine"
+                href="https://www.linkedin.com/in/vigilant-llc-0bb993415"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 
 transition-colors duration-200 hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 
 focus-visible:ring-emerald-400"
-                aria-label="Visit Ronnell Valentine on LinkedIn"
+                aria-label="Visit Vigilant Consulting on LinkedIn"
               >
                 <LinkedInIcon />
                 LinkedIn
@@ -171,7 +163,7 @@ focus-visible:ring-emerald-400"
             </div>
           </nav>
 
-          {/* Contact information */}
+          {/* Contact */}
           <section aria-labelledby="footer-contact-heading">
             <h2
               id="footer-contact-heading"
@@ -182,27 +174,13 @@ focus-visible:ring-emerald-400"
 
             <div className="mt-6 space-y-6 text-sm">
               <div>
-                <h3 className="font-medium text-white">Business Address</h3>
+                <h3 className="font-medium text-white">Location</h3>
 
-                <address className="mt-2 not-italic leading-6 text-slate-400">
-                  Vigilant Consulting LLC
-                  <br />
-                  Professional mailing address
-                  <br />
+                <p className="mt-2 leading-6 text-slate-400">
                   San Diego, California
-                </address>
-              </div>
-
-              <div>
-                <h3 className="font-medium text-white">Phone</h3>
-
-                <a
-                  href="tel:+16195551234"
-                  className="mt-2 inline-block text-slate-400 transition-colors duration-200 
-hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
-                >
-                  (619) 555-1234
-                </a>
+                  <br />
+                  Remote consulting nationwide
+                </p>
               </div>
 
               <div>
@@ -226,20 +204,6 @@ hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-vis
                   8:00 AM–5:00 PM Pacific
                   <br />
                   Appointments available upon request
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-medium text-white">
-                  Service Availability
-                </h3>
-
-                <p className="mt-2 leading-6 text-slate-400">
-                  San Diego, California
-                  <br />
-                  Illinois
-                  <br />
-                  Remote consulting nationwide
                 </p>
               </div>
             </div>
@@ -281,7 +245,7 @@ text-slate-400"
         </div>
       </div>
 
-      {/* Copyright area */}
+      {/* Copyright */}
       <div className="border-t border-white/10 bg-black/20">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-slate-500 sm:flex-row 
 sm:items-center sm:justify-between lg:px-8">
