@@ -13,12 +13,12 @@ import {
 
 type Category =
   | "All"
-  | "Windows Server"
-  | "Azure"
-  | "Docker"
-  | "AI"
-  | "CMMC"
-  | "Networking";
+  | "Networking"
+  | "Systems"
+  | "Cloud"
+  | "Security"
+  | "Compliance"
+  | "Automation";
 
 type Project = {
   title: string;
@@ -32,111 +32,122 @@ type Project = {
 
 const categories: Category[] = [
   "All",
-  "Windows Server",
-  "Azure",
-  "Docker",
-  "AI",
-  "CMMC",
   "Networking",
+  "Systems",
+  "Cloud",
+  "Security",
+  "Compliance",
+  "Automation",
 ];
 
 const projects: Project[] = [
   {
-    title: "Docker AI Server",
-    category: "Docker",
+    title: "Enterprise Network Segmentation Lab",
+    category: "Networking",
     description:
-      "Built a containerized AI application server using Ubuntu, Docker, and Portainer.",
-    tags: ["Docker", "Portainer", "Ubuntu"],
-    href: "/engineering-portfolio/docker-ai-server",
+      "Designed a segmented network architecture separating users, servers, management systems, and public-facing services with controlled traffic paths.",
+    tags: ["VLANs", "Routing", "ACLs", "Segmentation"],
+    href: "/engineering-portfolio/secure-network",
+    actionLabel: "View diagram",
   },
   {
-    title: "Vigilant Consulting Website",
-    category: "AI",
+    title: "Windows Server & Active Directory Build",
+    category: "Systems",
     description:
-      "Designed and deployed a responsive consulting website with modern lead intake and cloud hosting.",
-    tags: ["Next.js", "Vercel", "Responsive Design"],
-    href: "/engineering-portfolio/vigilant-consulting-website",
+      "Configured Active Directory Domain Services, DNS, DHCP, Group Policy, user administration, and centralized access controls.",
+    tags: ["Active Directory", "GPO", "DNS", "DHCP"],
+    href: "/engineering-portfolio/windows-server-domain",
+    actionLabel: "View architecture",
   },
   {
-    title: "NIST 800-171 Assessment",
-    category: "CMMC",
+    title: "NIST 800-171 Readiness Assessment",
+    category: "Compliance",
     description:
-      "Created a readiness assessment covering security controls, evidence requirements, and remediation priorities.",
+      "Reviewed security requirements, identified implementation gaps, and translated findings into prioritized technical and documentation actions.",
     tags: ["NIST 800-171", "CMMC", "POA&M"],
     href: "/engineering-portfolio/nist-assessment",
     actionLabel: "View report",
   },
   {
-    title: "Windows Server Domain Lab",
-    category: "Windows Server",
+    title: "Vulnerability & Configuration Remediation",
+    category: "Security",
     description:
-      "Configured Active Directory, Group Policy, DNS, DHCP, user accounts, and administrative access controls.",
-    tags: ["Active Directory", "GPO", "DNS"],
-    href: "/engineering-portfolio/windows-server-domain",
+      "Applied secure configuration controls, reviewed technical findings, and documented remediation actions to reduce system exposure.",
+    tags: ["STIG", "Hardening", "Remediation"],
+    href: "/engineering-portfolio/windows-hardening",
+    actionLabel: "View workflow",
   },
   {
-    title: "Azure Sentinel Lab",
-    category: "Azure",
+    title: "Microsoft Sentinel Security Monitoring Lab",
+    category: "Security",
     description:
-      "Built a cloud monitoring environment for log collection, security investigation, and KQL-based detections.",
+      "Built a cloud security monitoring environment for centralized log collection, investigation, querying, and detection development.",
     tags: ["Microsoft Sentinel", "KQL", "SIEM"],
     href: "/engineering-portfolio/azure-sentinel",
+    actionLabel: "View project",
   },
   {
-    title: "Secure Network Architecture",
-    category: "Networking",
+    title: "Secure Azure Landing Zone",
+    category: "Cloud",
     description:
-      "Designed a segmented network architecture for users, servers, management systems, and public services.",
-    tags: ["VLANs", "Firewall", "Segmentation"],
-    href: "/engineering-portfolio/secure-network",
-  },
-  {
-    title: "Ubuntu Application Server",
-    category: "Docker",
-    description:
-      "Configured an Ubuntu virtual server for containerized applications, management tools, and secure remote access.",
-    tags: ["Ubuntu", "VMware", "Docker"],
-    href: "/engineering-portfolio/ubuntu-server",
-  },
-  {
-    title: "Vigilant AI Knowledge Engine",
-    category: "AI",
-    description:
-      "Built an AI knowledge platform combining semantic retrieval, local inference, source validation, APIs, and workflow automation.",
-    tags: ["FastAPI", "Qdrant", "Ollama"],
-    href: "/engineering-portfolio/vigilant-ai",
-  },
-  {
-    title: "Azure Landing Zone",
-    category: "Azure",
-    description:
-      "Designed an Azure environment with policy controls, network segmentation, identity protection, and monitoring.",
+      "Designed an Azure foundation using identity controls, policy enforcement, network segmentation, role-based access, and centralized monitoring.",
     tags: ["Azure Policy", "RBAC", "Networking"],
     href: "/engineering-portfolio/azure-landing-zone",
-  },
-  {
-    title: "Zero Trust Access Review",
-    category: "CMMC",
-    description:
-      "Reviewed multifactor authentication, privileged access, role assignments, and identity governance practices.",
-    tags: ["MFA", "RBAC", "Zero Trust"],
-    href: "/engineering-portfolio/zero-trust-review",
+    actionLabel: "View architecture",
   },
   {
     title: "Enterprise VLAN Design",
     category: "Networking",
     description:
-      "Designed a logical VLAN structure to separate business functions and reduce unnecessary network exposure.",
-    tags: ["Cisco", "VLAN", "Routing"],
+      "Designed a logical VLAN architecture to separate business functions, reduce unnecessary exposure, and control inter-network communication.",
+    tags: ["Cisco", "VLANs", "Routing"],
     href: "/engineering-portfolio/vlan-design",
+    actionLabel: "View diagram",
   },
   {
-    title: "Windows Security Hardening",
-    category: "Windows Server",
+    title: "Ubuntu Application Infrastructure",
+    category: "Systems",
     description:
-      "Applied secure configuration practices, administrative controls, and policy settings to a Windows Server lab.",
-    tags: ["Windows Server", "STIG", "Hardening"],
-    href: "/engineering-portfolio/windows-hardening",
+      "Configured an Ubuntu virtual server for containerized applications, infrastructure management, and secure remote administration.",
+    tags: ["Ubuntu", "VMware", "Linux"],
+    href: "/engineering-portfolio/ubuntu-server",
+    actionLabel: "View project",
+  },
+  {
+    title: "Containerized Automation Server",
+    category: "Automation",
+    description:
+      "Built a containerized Linux environment using Docker and Portainer to host internal applications and support automation workflows.",
+    tags: ["Docker", "Portainer", "Ubuntu"],
+    href: "/engineering-portfolio/docker-ai-server",
+    actionLabel: "View project",
+  },
+  {
+    title: "Vigilant AI Knowledge Engine",
+    category: "Automation",
+    description:
+      "Built a knowledge platform combining semantic retrieval, local inference, source validation, APIs, and automated security workflows.",
+    tags: ["FastAPI", "Qdrant", "Ollama"],
+    href: "/engineering-portfolio/vigilant-ai",
+    actionLabel: "View architecture",
+  },
+  {
+    title: "Identity & Zero Trust Access Review",
+    category: "Security",
+    description:
+      "Evaluated multifactor authentication, privileged access, role assignments, and identity controls against least-privilege principles.",
+    tags: ["MFA", "RBAC", "Zero Trust"],
+    href: "/engineering-portfolio/zero-trust-review",
+    actionLabel: "View assessment",
+  },
+  {
+    title: "Vigilant Web Platform",
+    category: "Cloud",
+    description:
+      "Designed and deployed a responsive Next.js application with cloud hosting, secure form handling, and production deployment workflows.",
+    tags: ["Next.js", "Vercel", "Web Security"],
+    href: "/engineering-portfolio/vigilant-consulting-website",
+    actionLabel: "View project",
   },
 ];
 
@@ -262,7 +273,8 @@ export default function EngineeringPortfolio() {
     const canScrollRight =
       event.deltaY > 0 && track.scrollLeft < maximumScroll - 1;
 
-    const canScrollLeft = event.deltaY < 0 && track.scrollLeft > 1;
+    const canScrollLeft =
+      event.deltaY < 0 && track.scrollLeft > 1;
 
     if (canScrollRight || canScrollLeft) {
       event.preventDefault();
@@ -279,8 +291,6 @@ export default function EngineeringPortfolio() {
       return;
     }
 
-    // Preserve native momentum scrolling on phones and tablets.
-    // Custom dragging is only enabled for the primary mouse button.
     if (event.pointerType !== "mouse" || event.button !== 0) {
       return;
     }
@@ -357,7 +367,9 @@ export default function EngineeringPortfolio() {
 
       <div className="engineering-content">
         <header className="engineering-header">
-          <p className="engineering-eyebrow">Applied Technology</p>
+          <p className="engineering-eyebrow">
+            Technical Capabilities
+          </p>
 
           <div className="engineering-heading-layout">
             <div>
@@ -365,9 +377,8 @@ export default function EngineeringPortfolio() {
             </div>
 
             <p>
-              Explore practical projects developed across cybersecurity,
-              artificial intelligence, cloud infrastructure, networking,
-              automation, and modern business systems.
+              Practical implementations across networking, systems,
+              cloud infrastructure, security, compliance, and automation.
             </p>
           </div>
         </header>
@@ -847,8 +858,10 @@ export default function EngineeringPortfolio() {
           right: 30px;
           color: rgba(248, 250, 252, 0.68);
           font-family:
-            ui-monospace, SFMono-Regular,
-            Menlo, monospace;
+            ui-monospace,
+            SFMono-Regular,
+            Menlo,
+            monospace;
           font-size: 0.73rem;
           font-weight: 700;
           letter-spacing: 0.14em;
@@ -950,9 +963,6 @@ export default function EngineeringPortfolio() {
           .engineering-card {
             scroll-snap-align: start;
             scroll-snap-stop: normal;
-          }
-
-          .engineering-card {
             min-height: 410px;
           }
 

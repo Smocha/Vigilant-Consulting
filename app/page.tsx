@@ -1,8 +1,4 @@
 import TrustedBy from "../components/TrustedBy";
-import WhyVigilant from "../components/WhyVigilant";
-import Services from "../components/Services";
-import InsightsPreview from "../components/InsightsPreview";
-import CTASection from "../components/CTASection";
 import ContactForm from "../components/ContactForm";
 import EngineeringPortfolio from "../components/EngineeringPortfolio";
 import CaseStudiesPreview from "../components/CaseStudiesPreview";
@@ -41,46 +37,13 @@ const representativeStudies = [
   },
 ];
 
-const insightCards = [
-  {
-    category: "Guide",
-    title: "How to scope a security assessment before buying more tools",
-    summary:
-      "A practical starting point covering asset inventory, privilege exposure, and the questions every assessment should answer.",
-  },
-  {
-    category: "Incident readiness",
-    title: "What every organization should document before an incident happens",
-    summary:
-      "Covers escalation contacts, communication paths, backup verification, log access, and outside counsel readiness.",
-  },
-  {
-    category: "AI security",
-    title: "A plain-English starting point for AI governance and data protection",
-    summary:
-      "Helps leadership understand guardrails, visibility, and accountability before deploying AI tools.",
-  },
-];
-
 export default function Page() {
   return (
     <main className="min-h-screen overflow-x-clip bg-[#0d1b2a]">
       <Hero />
-
       <TrustedBy />
-
-      <WhyVigilant />
-
-      <Services />
-
       <CaseStudiesPreview studies={representativeStudies} />
-
       <EngineeringPortfolio />
-
-      <InsightsPreview items={insightCards} />
-
-      <CTASection />
-
       <ContactForm />
     </main>
   );

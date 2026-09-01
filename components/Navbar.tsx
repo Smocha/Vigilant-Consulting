@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Insights', href: '/blog' },
+  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -29,6 +29,7 @@ export default function Navbar() {
             <span className="block text-sm font-semibold tracking-wide text-[#e8edf2]">
               Vigilant
             </span>
+
             <small className="block text-[10px] uppercase tracking-[0.18em] text-[#8a9ba8]">
               Consulting
             </small>

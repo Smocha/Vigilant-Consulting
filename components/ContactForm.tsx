@@ -54,6 +54,7 @@ const labelClassName = "text-sm font-medium text-slate-200";
 
 function validateForm(values: FormValues): FieldErrors {
   const errors: FieldErrors = {};
+
   const trimmedName = values.name.trim();
   const trimmedEmail = values.email.trim();
   const trimmedMessage = values.message.trim();
@@ -156,13 +157,16 @@ export default function ContactForm() {
         | null;
 
       if (!response.ok) {
-        throw new Error(data?.error || "Unable to send your inquiry right now.");
+        throw new Error(
+          data?.error || "Unable to send your inquiry right now."
+        );
       }
 
       setStatus("success");
       setServerMessage(
         data?.message || "Thanks — your inquiry has been sent successfully."
       );
+
       setForm(initialValues);
       setErrors({});
     } catch (error) {
@@ -182,9 +186,9 @@ export default function ContactForm() {
       aria-labelledby="contact-title"
       className="scroll-mt-32 py-24 sm:py-28"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <div>
+      <div className="mx-auto max-w-4xl px-6 lg:px-8">
+        <div className="grid gap-8">
+          <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300/85">
               Start Your Security Evaluation
             </p>
@@ -193,44 +197,22 @@ export default function ContactForm() {
               id="contact-title"
               className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl"
             >
-              Speak with a cybersecurity advisor.
+              Speak with a cybersecurity specialist.
             </h2>
-
-            <p className="mt-5 text-base leading-8 text-slate-300 sm:text-lg">
-              Whether you&apos;re preparing for NIST 800-171 or CMMC
-              compliance, strengthening your cybersecurity posture, evaluating
-              AI security, or responding to evolving threats, Vigilant
-              Consulting is here to help. Tell us about your organization, and
-              we&apos;ll recommend the engagement that best aligns with your
-              goals.
-            </p>
-
-            <div className="mt-8 space-y-3 text-sm leading-7 text-slate-300">
-              <p className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
-                We help organizations evaluate risk, prepare for compliance
-                requirements, improve incident readiness, and make informed
-                cybersecurity decisions.
-              </p>
-
-              <p className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
-                Your initial consultation is complimentary. There is no
-                obligation — just an opportunity to discuss your cybersecurity
-                objectives and determine the best next step.
-              </p>
-            </div>
           </div>
 
           <form
             onSubmit={handleSubmit}
             noValidate
             aria-busy={isSubmitting}
-            className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl sm:p-8"
+            className="mx-auto w-full rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
-              <div className="sm:col-span-1">
+              <div>
                 <label htmlFor="name" className={labelClassName}>
                   Name
                 </label>
+
                 <input
                   id="name"
                   name="name"
@@ -244,6 +226,7 @@ export default function ContactForm() {
                   placeholder="Your full name"
                   required
                 />
+
                 {errors.name ? (
                   <p id="name-error" className="mt-2 text-sm text-rose-300">
                     {errors.name}
@@ -251,10 +234,11 @@ export default function ContactForm() {
                 ) : null}
               </div>
 
-              <div className="sm:col-span-1">
+              <div>
                 <label htmlFor="email" className={labelClassName}>
                   Email
                 </label>
+
                 <input
                   id="email"
                   name="email"
@@ -266,9 +250,10 @@ export default function ContactForm() {
                   className={inputClassName}
                   aria-invalid={Boolean(errors.email)}
                   aria-describedby={errors.email ? "email-error" : undefined}
-                  placeholder="you@company.com"
+                  placeholder="@company.com"
                   required
                 />
+
                 {errors.email ? (
                   <p id="email-error" className="mt-2 text-sm text-rose-300">
                     {errors.email}
@@ -276,10 +261,11 @@ export default function ContactForm() {
                 ) : null}
               </div>
 
-              <div className="sm:col-span-1">
+              <div>
                 <label htmlFor="phone" className={labelClassName}>
                   Phone
                 </label>
+
                 <input
                   id="phone"
                   name="phone"
@@ -292,10 +278,11 @@ export default function ContactForm() {
                 />
               </div>
 
-              <div className="sm:col-span-1">
+              <div>
                 <label htmlFor="company" className={labelClassName}>
                   Company
                 </label>
+
                 <input
                   id="company"
                   name="company"
@@ -308,10 +295,11 @@ export default function ContactForm() {
                 />
               </div>
 
-              <div className="sm:col-span-1">
+              <div>
                 <label htmlFor="inquiryType" className={labelClassName}>
                   Inquiry type
                 </label>
+
                 <select
                   id="inquiryType"
                   name="inquiryType"
@@ -325,11 +313,16 @@ export default function ContactForm() {
                   required
                 >
                   {inquiryOptions.map((option) => (
-                    <option key={option} value={option} className="bg-slate-950">
+                    <option
+                      key={option}
+                      value={option}
+                      className="bg-slate-950"
+                    >
                       {option}
                     </option>
                   ))}
                 </select>
+
                 {errors.inquiryType ? (
                   <p
                     id="inquiryType-error"
@@ -340,10 +333,11 @@ export default function ContactForm() {
                 ) : null}
               </div>
 
-              <div className="sm:col-span-1">
+              <div>
                 <label htmlFor="timeline" className={labelClassName}>
                   Timeline
                 </label>
+
                 <select
                   id="timeline"
                   name="timeline"
@@ -357,13 +351,21 @@ export default function ContactForm() {
                   required
                 >
                   {timelineOptions.map((option) => (
-                    <option key={option} value={option} className="bg-slate-950">
+                    <option
+                      key={option}
+                      value={option}
+                      className="bg-slate-950"
+                    >
                       {option}
                     </option>
                   ))}
                 </select>
+
                 {errors.timeline ? (
-                  <p id="timeline-error" className="mt-2 text-sm text-rose-300">
+                  <p
+                    id="timeline-error"
+                    className="mt-2 text-sm text-rose-300"
+                  >
                     {errors.timeline}
                   </p>
                 ) : null}
@@ -371,6 +373,7 @@ export default function ContactForm() {
 
               <div className="hidden">
                 <label htmlFor="website">Website</label>
+
                 <input
                   id="website"
                   name="website"
@@ -386,6 +389,7 @@ export default function ContactForm() {
                 <label htmlFor="message" className={labelClassName}>
                   Message
                 </label>
+
                 <textarea
                   id="message"
                   name="message"
@@ -394,10 +398,13 @@ export default function ContactForm() {
                   onChange={handleChange}
                   className={inputClassName}
                   aria-invalid={Boolean(errors.message)}
-                  aria-describedby={errors.message ? "message-error" : undefined}
+                  aria-describedby={
+                    errors.message ? "message-error" : undefined
+                  }
                   placeholder="Tell us what you are evaluating, where you need clarity, and any timeline we should know."
                   required
                 />
+
                 {errors.message ? (
                   <p id="message-error" className="mt-2 text-sm text-rose-300">
                     {errors.message}

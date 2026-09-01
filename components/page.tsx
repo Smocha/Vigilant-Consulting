@@ -13,31 +13,31 @@ const representativeStudies = [
     sector: "Healthcare",
     title: "Readiness review for a regulated care environment",
     challenge:
-      "Leadership understood they had compliance obligations but needed help translating requirements into operational priorities.",
+      "Leadership understood their compliance obligations but needed help translating requirements into operational priorities.",
     approach:
-      "We conducted a plain-language risk assessment, mapped exposed areas to business impact, and produced a prioritized remediation roadmap.",
+      "A plain-language risk assessment, mapped to business impact, with a prioritized remediation roadmap.",
     outcome:
-      "The organization left with a documented posture, a working response plan, and a clear 90-day action list.",
+      "A documented security posture, a working incident response plan, and a 90-day action list ready to execute.",
   },
   {
     sector: "Financial services",
     title: "Cloud security and access review for a growing firm",
     challenge:
-      "A scaling firm had accumulated cloud services and user permissions with no structured review process.",
+      "Cloud services and user permissions had accumulated with no structured review process.",
     approach:
-      "We reviewed cloud architecture, permissions, and external exposure, then delivered governance recommendations by effort and impact.",
+      "Reviewed cloud architecture, permissions, and external exposure, then ranked fixes by effort and impact.",
     outcome:
-      "Leadership gained a clear picture of data exposure and a recurring review cadence to prevent future drift.",
+      "A clear picture of data exposure, plus a recurring review cadence to catch drift before it becomes risk.",
   },
   {
     sector: "Growing business",
     title: "Incident response preparation for a lean team",
     challenge:
-      "A fast-growing company had no documented response plan, escalation clarity, or leadership decision map.",
+      "No documented response plan, escalation path, or decision-maker for a security event.",
     approach:
-      "We ran a tabletop exercise, mapped communication flows, identified vendor contacts, and built a simplified playbook.",
+      "A tabletop exercise mapped who talks to whom, when, and with what authority — then built it into a simplified playbook.",
     outcome:
-      "The team gained a working response document, defined roles, and confidence to act quickly if an event occurred.",
+      "A working response document, clear ownership, and the confidence to act fast if something happens.",
   },
 ];
 

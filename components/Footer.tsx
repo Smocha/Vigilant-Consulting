@@ -39,9 +39,9 @@ const resourceLinks = [
 ];
 
 const trustItems = [
-  "Veteran-Owned",
   "Cybersecurity Focused",
-  "Small Business",
+  "Compliance Ready",
+  "Security Engineering",
   "Remote Consulting",
 ];
 
@@ -56,17 +56,9 @@ export default function Footer() {
           <section aria-labelledby="footer-company-heading">
             <Link
               href="/"
-              className="inline-flex items-center gap-3"
+              className="inline-flex items-start"
               aria-label="Vigilant Consulting home"
             >
-              <span
-                className="flex h-12 w-12 items-center justify-center rounded-xl border 
-border-emerald-400/30 bg-emerald-400/10 text-lg font-bold text-emerald-400"
-                aria-hidden="true"
-              >
-                V
-              </span>
-
               <span>
                 <span
                   id="footer-company-heading"
@@ -76,26 +68,24 @@ border-emerald-400/30 bg-emerald-400/10 text-lg font-bold text-emerald-400"
                 </span>
 
                 <span className="block text-xs uppercase tracking-[0.2em] text-emerald-400">
-                  Cybersecurity Advisory
+                  Cybersecurity Engineering & Compliance
                 </span>
               </span>
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
-              Cybersecurity, compliance, engineering, and technology advisory
-              services designed to help organizations strengthen security,
-              reduce risk, and improve operational resilience.
+              We help organizations close the gap between what compliance
+              requires and what their systems actually do.
             </p>
 
             <div className="mt-6 rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.06] p-5">
               <p className="text-sm font-semibold text-white">
-                Veteran-Owned Small Business
+                Practical Security Guidance
               </p>
 
               <p className="mt-2 text-sm leading-6 text-slate-400">
-                Practical cybersecurity guidance backed by hands-on experience
-                supporting secure information systems and modern technology
-                environments.
+                Straight-talk security guidance grounded in implementation, not
+                theory.
               </p>
             </div>
           </section>
@@ -114,8 +104,7 @@ border-emerald-400/30 bg-emerald-400/10 text-lg font-bold text-emerald-400"
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors duration-200 
-hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                    className="text-sm text-slate-400 transition-colors duration-200 hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
                   >
                     {link.label}
                   </Link>
@@ -138,8 +127,7 @@ hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-vis
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors duration-200 
-hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                    className="text-sm text-slate-400 transition-colors duration-200 hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
                   >
                     {link.label}
                   </Link>
@@ -152,9 +140,7 @@ hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-vis
                 href="https://www.linkedin.com/in/vigilant-llc-0bb993415"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 
-transition-colors duration-200 hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 
-focus-visible:ring-emerald-400"
+                className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
                 aria-label="Visit Vigilant Consulting on LinkedIn"
               >
                 <LinkedInIcon />
@@ -188,8 +174,7 @@ focus-visible:ring-emerald-400"
 
                 <a
                   href="mailto:info@vigilantechusa.com"
-                  className="mt-2 inline-block break-all text-slate-400 transition-colors duration-200 
-hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                  className="mt-2 inline-block break-all text-slate-400 transition-colors duration-200 hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
                 >
                   info@vigilantechusa.com
                 </a>
@@ -219,8 +204,7 @@ hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-vis
             {trustItems.map((item) => (
               <li
                 key={item}
-                className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] 
-text-slate-400"
+                className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-slate-400"
               >
                 <span
                   className="h-1.5 w-1.5 rounded-full bg-emerald-400"
@@ -247,8 +231,7 @@ text-slate-400"
 
       {/* Copyright */}
       <div className="border-t border-white/10 bg-black/20">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-slate-500 sm:flex-row 
-sm:items-center sm:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>
             © {currentYear} Vigilant Consulting LLC. All rights reserved.
           </p>
@@ -269,9 +252,7 @@ function LinkedInIcon() {
       fill="currentColor"
       aria-hidden="true"
     >
-      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 
-2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 
-7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.1 20.45H3.54V8.98H7.1v11.47Z" />
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.1 20.45H3.54V8.98H7.1v11.47Z" />
     </svg>
   );
 }
